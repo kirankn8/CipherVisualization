@@ -1,0 +1,44 @@
+$def with (error='',plaintext='')
+<html>
+<head>
+	<title>Affine Ciphere</title>
+	<link href="static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+		<h1>AFFINE CIPHER</h1>
+		<blockquote>The affine cipher is a type of monoalphabetic substitution cipher, wherein each letter in an alphabet is mapped to its numeric equivalent, encrypted using a simple mathematical function, and converted back to a letter. The formula used means that each letter encrypts to one other letter, and back again, meaning the cipher is essentially a standard substitution cipher with a rule governing which letter goes to which. As such, it has the weaknesses of all substitution ciphers. Each letter is enciphered with the function (ax + b) mod 26, where b is the magnitude of the shift.</blockquote>
+		<h2>Decryption</h2>
+		<form method="POST" role="form" class="form-horizontal">
+  				<div class="form-group">
+    				<label class="control-label col-sm-2" for="usr">Cipher Text:</label>
+    				<div class="col-sm-10">
+      					<input type="text" class="form-control" placeholder="Enter Cipher Text" name="ciphertext">
+    				</div>
+ 				 </div>
+  				<div class="form-group">
+            <label class="control-label col-sm-2" for="usr">a:</label>
+            <div class="col-sm-10">
+                <input type="number" name="a" min="0" max="25" value="1">
+            </div>
+         </div>
+         <div class="form-group">
+            <label class="control-label col-sm-2" for="usr">b:</label>
+            <div class="col-sm-10">
+                <input type="number" name="b" min="-25" max="25" value="1">
+            </div>
+         </div>
+ 				<div class="form-group"> 
+    				<div class="col-sm-offset-2 col-sm-10">
+      					<input type="submit" class="btn btn-success" value="Decrypt">
+    				</div>
+  				</div>
+  		</form>
+		$if error:
+			<div class="alert alert-danger">$error</div>
+		$if plaintext:
+			<div class="alert alert-info">Plain Text : <strong style="color:black;"> $plaintext</strong></div>
+		<hr>
+
+	<a href="/">Affine Ciphere Encryption Click Here</a>
+</body>
+</html>
